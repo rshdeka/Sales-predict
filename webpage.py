@@ -23,7 +23,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 image_path = 'img.jpg'
 image = Image.open(image_path)
-st.image(image, use_column_width=True)
+st.image(image, use_container_width=True)
 
 
 # Define the features
