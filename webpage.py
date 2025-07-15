@@ -52,9 +52,11 @@ st.write(features)
 # Predict the price
 def prediction():
     if (st.button('Predict Price')):
-        query = np.array([state, centre, commodity, variety, category, unit, month], dtype=object)
-        query = query.reshape(1,7)
-        st.title(model.predict(query)[0])
+        #query = np.array([state, centre, commodity, variety, category, unit, month], dtype=object)
+        #query = query.reshape(1,7)
+        query_df = pd.DataFrame([[state, centre, commodity, variety, category, unit, month]],
+                                columns=['State', 'Centre', 'Commodity', 'Variety', 'Category', 'Unit', 'Month'])
+        st.title(model.predict(query_df)[0])
 prediction()
 
 html_temp1 = """ 
